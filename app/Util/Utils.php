@@ -37,7 +37,8 @@ class Utils
         }
 
         $value = null;
-        $formatter = new \MessageFormatter('pt_br', $message);
+        //TODO
+        //$formatter = new \MessageFormatter('pt_br', $message);
 
         if (!is_array($params)) {
             $value = $params;
@@ -50,7 +51,7 @@ class Utils
             $params[] = $value;
         }
 
-        return $formatter->format($params);
+        return str_replace("{0}", $value, $message);
     }
 
     /**
