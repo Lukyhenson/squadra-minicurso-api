@@ -34,7 +34,7 @@ class Handler extends ExceptionHandler
             $erro = Erro::newInstance('MSG_001', $message);
             $erro->setStackTrace($e->getTraceAsString());
 
-            $response->setContent($message);
+            $response->setContent($erro->__toString());
             $response->setStatusCode(500);
         }
 
