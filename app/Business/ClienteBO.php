@@ -44,7 +44,7 @@ class ClienteBO extends AbstractBO
             $vigente = $this->getClienteRepository()->find($id);
 
             if (empty($vigente)) {
-                throw  new NegocioException('MSG_003');
+                throw  new NegocioException('MSG_009');
             }
 
             $cliente->setDataAlteracao($dataAtual);

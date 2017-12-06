@@ -12,7 +12,15 @@
 */
 
 $router->get('/', function () {
-    return app()->version();
+    $application = app()->version();
+
+    $pathLog = storage_path('logs/lumen.log');
+    $dataLog = file_get_contents($pathLog);
+
+    $application .= '<br/><br/>Lumen:<br/><br/><pre>';
+    $application .= $dataLog;
+
+    return $application;
 });
 
 /*

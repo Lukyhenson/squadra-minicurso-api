@@ -31,6 +31,7 @@ return [
             'paths' => [
                 base_path('app'),
             ],
+            // Executar o comando: php artisan doctrine:generate:proxies
             'repository' => Doctrine\ORM\EntityRepository::class,
             'proxies' => [
                 'namespace' => false,
